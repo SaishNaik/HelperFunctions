@@ -1,3 +1,3 @@
-module github.com/SaishNaik/helper_functions
+module github.com/SaishNaik/HelperFunctions
 
 go 1.18
