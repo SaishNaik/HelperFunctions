@@ -16,6 +16,16 @@ type jsonResponse struct {
 	Data    any    `json:"data,omitempty"`
 }
 
+func (app *Helper) CustomJsonResponse(error bool, msg string, data any) any {
+	customResponse := jsonResponse{
+		Error:   error,
+		Message: msg,
+		Data:    data,
+	}
+
+	return customResponse
+}
+
 func (app *Helper) ReadJson(rw http.ResponseWriter, r *http.Request, data any) error {
 	maxBytes := 1048576
 	r.Body = http.MaxBytesReader(rw, r.Body, int64(maxBytes))
